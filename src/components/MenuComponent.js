@@ -12,8 +12,7 @@ class Menu extends Component{
             selectedDish: null
         };
 
-        console.log('Menu component constructed');
-        
+    
     }
 
     onDishSelect(dish){
@@ -27,7 +26,7 @@ class Menu extends Component{
 
 
     render(){
-        console.log('renders menu component');
+        
         
         const menu = this.props.dishes.map((dish) => {
             return (
@@ -56,10 +55,7 @@ class Menu extends Component{
         );
     }
 
-    componentDidMount(){
-        console.log('Menu component componentDidMounbt is invoked');
-        
-    }
+   
 }
 
 export default Menu;
