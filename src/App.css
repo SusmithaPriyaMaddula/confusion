@@ -11,7 +11,7 @@ min-height:400px;
 }
 
 .footer{
-background-color: #D1C4E9;
+background-color: moccasin;
 margin:0px auto;
 padding: 20px 0px 20px 0px;
 }
@@ -29,5 +29,24 @@ color:#0f0f0f;
 }
 
 .navbar-dark {
-background-color: #512DA8;
+background-color:magenta;
 }
+
+.nav-item{
+    padding:3px;
+}
+
+.navbar-toggler{
+    display:none;
+}
+@media (max-width: 768px) {
+    .navbar-toggler{
+        display:inline;
+        width: 41px;
+        height: 30px;
+        border:black solid 2px;
+        
+    }
+    .nav-item{display:table-row;}
+    
+  }
