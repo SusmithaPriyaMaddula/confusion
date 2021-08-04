@@ -54,3 +54,11 @@ background-color:magenta;
   .RenderCard{
       display:inline-block;
   }
+
+  .blockquote{
+      border:black solid 1px;
+  }
+
+div.media{
+      font:bold;
+  }

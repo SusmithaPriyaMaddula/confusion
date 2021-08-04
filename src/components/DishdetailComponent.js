@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
+import '../App.css';
     function RenderDish({dish}) {
 
         if (dish != null) {
