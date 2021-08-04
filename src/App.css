@@ -50,3 +50,7 @@ background-color:magenta;
     .nav-item{display:table-row;}
     
   }
+
+  .RenderCard{
+      display:inline-block;
+  }
