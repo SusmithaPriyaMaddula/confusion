@@ -4,13 +4,14 @@ import React,{Component} from 'react';
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.toggleModal = this.toggleModal.bind(this);
-        this.toggleNav = this.toggleNav.bind(this);
-        this.handleLogin = this.handleLogin.bind(this);
+        
         this.state = {
             isNavOpen: false,
             isModalOpen: false
         };
+        this.toggleModal = this.toggleModal.bind(this);
+        this.toggleNav = this.toggleNav.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
       }
 
       toggleNav() {
@@ -33,7 +34,7 @@ class Header extends Component {
 
     render() {
         return(
-            <div>
+            <>
                 <Navbar dark >
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} ><span className="fa fa-arrow-down fa-lg"> </span></NavbarToggler>
@@ -53,8 +54,8 @@ class Header extends Component {
                                 <NavLink className="nav-link" to='/contactus'><span className="fa fa-address-card fa-lg"></span> Contact Us   </NavLink>
                             </NavItem> 
                             </Nav>
-                            <Nav className="ml-auto" navbar>
-                                <NavItem className="list-unstyled">
+                            <Nav className="ml-auto" navbar className="list-unstyled">
+                                <NavItem >
                                     <Button outline onClick={this.toggleModal}><span className="fa fa-sign-in fa-lg"></span> Login</Button>
                                 </NavItem>
                             </Nav>
@@ -96,7 +97,7 @@ class Header extends Component {
                         </Form>
                     </ModalBody>
                 </Modal>
-            </div>
+            </>
         );
     }
 }

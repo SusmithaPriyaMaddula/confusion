@@ -30,7 +30,7 @@ class CommentForm extends Component{
             
             <div>
                 <Button type="button" onClick={this.toggleModalComment} ><span className="fa fa-pencil fa-lg"> Submit Comment</span></Button>
-                <Modal isOpen = {this.state.isCommentModelOpen} toggle={this.toggleModalComment}>
+                <Modal isCommentModalOpen = {!this.state.isCommentModelOpen} toggle={this.toggleModalComment}>
                     <ModalHeader toggle={this.toggleModalComment}>
                         Add your Commemt
                     </ModalHeader>
