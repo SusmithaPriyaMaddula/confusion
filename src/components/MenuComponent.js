@@ -3,10 +3,12 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle ,Breadcrum
 import {Link} from 'react-router-dom';
 import DishDetail from "./DishdetailComponent";
 import '../shared/dishes.js';
-
+import { Loading } from './LoadingComponent';
 
     function RenderMenuItem ({dish, onClick}) {
+        
         return (
+            
             <Card>
                 <Link to={`/menu/${dish.id}`} >
                     <CardImg width="100%" src={dish.image} alt={dish.name} />
@@ -20,9 +22,31 @@ import '../shared/dishes.js';
 
 
     const Menu = (props) =>{
-        const menu = props.dishes.map((dish) => {
+        if (props.dishes.isLoading) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <Loading />
+                    </div>
+                </div>
+            );
+        }
+        else if (props.dishes.errMess) {
+            return(
+                <div className="container">
+                    <div className="row"> 
+                        <div className="col-12">
+                            <h4>{props.dishes.errMess}</h4>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+        else{
+        const menu = props.dishes.dishes.map((dish) => {
+            
             return (
-                <div key={ dish.id } className="col-12 col-md-5 m-1">    
+               <div key={ dish.id } className="col-12 col-md-5 m-1">    
                     <RenderMenuItem dish={dish}  />              
                 </div>
             );
@@ -40,9 +64,10 @@ import '../shared/dishes.js';
                     </div>                
                 </div>
                 <div className="row">
+                    
                     {menu}
                 </div>
             </div>
         );
-    }
+    }}
     export default Menu;
